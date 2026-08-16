@@ -4,6 +4,7 @@ import authRoutes from './routes/authRoutes.js';
 import adminRoutes from './routes/adminRoutes.js';
 import residentRoutes from './routes/residentRoutes.js';
 import securityRoutes from './routes/securityRoutes.js';
+import pollRoutes from './routes/pollRoutes.js';
 import { errorMiddleware } from './middlewares/errorMiddleware.js';
 
 const app = express();
@@ -30,6 +31,7 @@ app.use('/api/auth', authRoutes);
 app.use('/api/admin', adminRoutes);
 app.use('/api/resident', residentRoutes);
 app.use('/api/security', securityRoutes);
+app.use('/api/polls', pollRoutes);
 
 app.use((req, res, next) => {
   res.status(404).json({
